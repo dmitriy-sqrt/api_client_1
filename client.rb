@@ -13,12 +13,18 @@ module ApiClient
   class Branch < Base
   end
 
-  class Landlord < Base
+  class Branch::Landlord < Base
     belongs_to :branch
   end
 
-  class Property < Base
+  class Landlord < Base
+  end
+
+  class Landlord::Property < Base
     belongs_to :landlord
+  end
+
+  class Property < Base
   end
 
   class HeadersMiddleware < Faraday::Middleware
